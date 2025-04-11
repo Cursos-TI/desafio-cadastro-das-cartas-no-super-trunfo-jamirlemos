@@ -70,7 +70,7 @@ int main() {
   printf("Digite o nome da cidade da carta 2: ");
   fgets(cidade2, 30, stdin);  // Lê uma linha (incluindo espaços) e armazena em cidade2
 
-  // Remove o caractere de nova linha '\n' do final da string cidade, se presente
+  // Remove o caractere de nova linha '\n' do final da string cidade2, se presente
   cidade2[strcspn(cidade2, "\n")] = 0;
 
   // Solicita ao usuário o número de habitantes
