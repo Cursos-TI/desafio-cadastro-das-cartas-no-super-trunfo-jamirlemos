@@ -2,22 +2,27 @@
 
 int main() {
   // Declaração de variáveis para armazenar os dados da carta
-  char Estado;        // Armazena a letra que representa o estado (de 'A' a 'H')
-  char codigo[6];     // Armazena o código da carta (como uma string de até 5 caracteres + '\0')
-  char cidade[30];    // Armazena o nome da cidade (até 29 caracteres + '\0')
-  int populacao = 0;  // Armazena o número de habitantes da cidade
-  float area = 0;     // Armazena a área da cidade em km²
-  float pib = 0;      // Armazena o PIB da cidade em bilhões de reais
-  int turistico = 0;  // Armazena a quantidade de pontos turísticos da cidade
+  char Estado;             // Armazena a letra que representa o estado (de 'A' a 'H')
+  char codigo[6];          // Armazena o código da carta (como uma string de até 5 caracteres + '\0')
+  char cidade[30];         // Armazena o nome da cidade (até 29 caracteres + '\0')
+  int populacao = 0;       // Armazena o número de habitantes da cidade
+  float area = 0;          // Armazena a área da cidade em km²
+  float pib = 0;           // Armazena o PIB da cidade em bilhões de reais
+  int turistico = 0;       // Armazena a quantidade de pontos turísticos da cidade
+  float densidade = 0;     // Armazena a densidade da população pela areá da cidade
+  float pibPerCapita = 0;  // Armazena o PIB per capita da cidade
+
 
   // Declaração de variáveis da carta 2
-  char Estado2;        // Armazena a letra que representa o estado (de 'A' a 'H')
-  char codigo2[6];     // Armazena o código da carta (como uma string de até 5 caracteres + '\0')
-  char cidade2[30];    // Armazena o nome da cidade (até 29 caracteres + '\0')
-  int populacao2 = 0;  // Armazena o número de habitantes da cidade
-  float area2 = 0;     // Armazena a área da cidade em km²
-  float pib2 = 0;      // Armazena o PIB da cidade em bilhões de reais
-  int turistico2 = 0;  // Armazena a quantidade de pontos turísticos da cidade
+  char Estado2;             // Armazena a letra que representa o estado (de 'A' a 'H')
+  char codigo2[6];          // Armazena o código da carta (como uma string de até 5 caracteres + '\0')
+  char cidade2[30];         // Armazena o nome da cidade (até 29 caracteres + '\0')
+  int populacao2 = 0;       // Armazena o número de habitantes da cidade
+  float area2 = 0;          // Armazena a área da cidade em km²
+  float pib2 = 0;           // Armazena o PIB da cidade em bilhões de reais
+  int turistico2 = 0;       // Armazena a quantidade de pontos turísticos da cidade
+  float densidade2 = 0;     // Armazena a densidade da população pela areá da cidade2
+  float pibPerCapita2 = 0;  // Armazena o PIB per capita da cidade2
 
   // Entrada dos dados da carta 1
 
@@ -54,7 +59,11 @@ int main() {
   printf("Digite a quantidade de pontos turísticos na cidade da carta 1: ");
   scanf("%d", &turistico);  // Lê um número inteiro e armazena em turistico
 
-  // ---------- Entrada dos dados da carta 2 ----------
+  // Cálculos carta 1
+  densidade = populacao / area;
+  pibPerCapita = pib / populacao;
+
+  //Entrada dos dados da carta 2
 
   // Solicita ao usuário que digite uma letra de 'A' a 'H' representando o estado
   printf("\nDigite uma letra de 'A' a 'H' que representa o Estado da carta 2: ");
@@ -89,26 +98,33 @@ int main() {
   printf("Digite a quantidade de pontos turísticos na cidade da carta 2: ");
   scanf("%d", &turistico2);  // Lê um número inteiro e armazena em turistico2
 
+  densidade2 = populacao2 / area2;
+  pibPerCapita2 = pib2 / populacao2;
+
   // Exibe todos os dados armazenados da carta 1
   printf("\nCarta 1 \n");
-  printf("Estado: %c \n", Estado);                           // Mostra a letra do estado
-  printf("Código: %c%s\n", Estado, codigo);                  // Mostra o código
-  printf("Nome da Cidade: %s\n", cidade);                    // Mostra o nome da cidade
-  printf("População: %d \n", populacao);                     // Mostra a população
-  printf("Área: %.2f km²\n", area);                          // Mostra a área com duas casas decimais
-  printf("PIB: %.2f bilhões de reais\n", pib);               // Mostra o PIB com duas casas decimais
-  printf("Número de Pontos Turísticos: %d\n\n", turistico);  // Mostra o número de pontos turísticos
+  printf("Estado: %c \n", Estado);                              // Mostra a letra do estado
+  printf("Código: %c%s\n", Estado, codigo);                     // Mostra o código
+  printf("Nome da Cidade: %s\n", cidade);                       // Mostra o nome da cidade
+  printf("População: %d \n", populacao);                        // Mostra a população
+  printf("Área: %.2f km²\n", area);                             // Mostra a área com duas casas decimais
+  printf("PIB: %.2f bilhões de reais\n", pib);                  // Mostra o PIB com duas casas decimais
+  printf("Número de Pontos Turísticos: %d\n\n", turistico);     // Mostra o número de pontos turísticos
+  printf("Densidade Populacional: %.2f hab/km²\n", densidade);  // Mostra a densidade populacional da cidade
+  printf("PIB per Capita: R$ %.2f\n", pibPerCapita);            // Mostra o PIB per capita da cidade
 
   //Exibição dos dados da carta 2
 
   printf("Carta 2\n");
-  printf("Estado: %c\n", Estado2);                            // Mostra a letra do estado2
-  printf("Código: %c%s\n", Estado2, codigo2);                 // Mostra o código2
-  printf("Nome da Cidade: %s\n", cidade2);                    // Mostra o nome da cidade2
-  printf("População: %d\n", populacao2);                      // Mostra a população2
-  printf("Área: %.2f km²\n", area2);                          // Mostra a área2 com duas casas decimais
-  printf("PIB: %.2f bilhões de reais\n", pib2);               // Mostra o PIB2 com duas casas decimais
-  printf("Número de Pontos Turísticos: %d\n\n", turistico2);  // Mostra o número de pontos turísticos
+  printf("Estado: %c\n", Estado2);                               // Mostra a letra do estado2
+  printf("Código: %c%s\n", Estado2, codigo2);                    // Mostra o código2
+  printf("Nome da Cidade: %s\n", cidade2);                       // Mostra o nome da cidade2
+  printf("População: %d\n", populacao2);                         // Mostra a população2
+  printf("Área: %.2f km²\n", area2);                             // Mostra a área2 com duas casas decimais
+  printf("PIB: %.2f bilhões de reais\n", pib2);                  // Mostra o PIB2 com duas casas decimais
+  printf("Número de Pontos Turísticos: %d\n\n", turistico2);     // Mostra o número de pontos turísticos
+  printf("Densidade Populacional: %.2f hab/km²\n", densidade2);  // Mostra a densidade populacional da cidade2
+  printf("PIB per Capita: R$ %.2f\n", pibPerCapita2);            // Mostra o PIB per capita da cidade2
 
   return 0;  // Fim do programa
 }
