@@ -1,5 +1,5 @@
 #include <stdio.h>  // Biblioteca padrão de entrada e saída
-#include <string.h>
+#include <string.h> // Biblioteca Biblioteca para manipulação de strings
 
 int main() {
   // Declaração de variáveis para armazenar os dados da carta 1
@@ -115,7 +115,6 @@ int main() {
 
   superPoder2 = populacao2 + area2 + (pib2 * 1000000000) + turistico2 + pibPerCapita2 + (1.0 / densidade2);  // Calcula o Super Poder da cidade 2
 
-
   // Exibe todos os dados armazenados da carta 1
   printf("\nCarta 1 \n");
   printf("Estado: %c \n", Estado);                               // Mostra a letra do estado
@@ -155,7 +154,7 @@ int main() {
   printf("Pontos Turísticos: %s (%d)\n", resultado[turistico > turistico2], turistico > turistico2);           // Compara pontos turísticos das cidades
   printf("Densidade Populacional: %s (%d)\n", resultado[densidade < densidade2], densidade < densidade2);      // Compara densidade das cidades
   printf("PIB per Capita: %s (%d)\n", resultado[pibPerCapita > pibPerCapita2], pibPerCapita > pibPerCapita2);  // Compara PIB per capita das cidades
-  printf("Super Poder: %s (%d)\n", resultado[superPoder > superPoder2], superPoder > superPoder2);             // Compara Super Poder das cidades
+  printf("Super Poder: %s (%d)\n\n\n", resultado[superPoder > superPoder2], superPoder > superPoder2);             // Compara Super Poder das cidades
 
   return 0;  // Fim do programa
 }
